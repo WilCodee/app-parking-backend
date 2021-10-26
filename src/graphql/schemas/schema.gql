@@ -1,3 +1,27 @@
 type Query {
   hello: String!
 }
+
+type Mutation {
+  booking(name: String!, carId: String!): Boolean!
+  unBook(carId: String!): Boolean!
+}
+
+type Subscription {
+  booking: BookingSubscriptionPayload!
+}
+
+enum MutationType {
+  booked
+  unbooked
+}
+
+type BookingSubscriptionPayload {
+  mutation: MutationType!
+  data: BookArgs
+}
+
+type BookArgs {
+  name: String!
+  carId: String!
+}
