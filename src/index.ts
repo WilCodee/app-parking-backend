@@ -1,5 +1,6 @@
 import { GraphQLServer, PubSub } from 'graphql-yoga'
 import { schema } from './graphql/index'
+import './db'
 
 const pubsub = new PubSub()
 
