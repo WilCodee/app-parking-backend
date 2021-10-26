@@ -1,10 +1,11 @@
 import { GraphQLServer, PubSub } from 'graphql-yoga'
 import { schema } from './graphql/index'
+import Models from './models'
 import './db'
 
 const pubsub = new PubSub()
 
-const context = { pubsub }
+const context = { pubsub, Models }
 
 const options = {
   port: 5000,
