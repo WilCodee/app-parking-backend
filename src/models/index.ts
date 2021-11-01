@@ -1,4 +1,5 @@
-import user from './user'
+import User from './user'
+import Item from './items'
 
-const Models = { user }
+const Models = { User, Item }
 export default Models

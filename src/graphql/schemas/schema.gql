@@ -1,14 +1,25 @@
 type Query {
-  hello: String!
+  item(parkId: String!): Item!
 }
 
 type Mutation {
-  booking(name: String!, carId: String!): Boolean!
-  unBook(carId: String!): Boolean!
+  booking(
+    name: String!
+    carId: String!
+    parkId: String!
+    pin: String!
+  ): Boolean!
+  unBook(carId: String!, parkId: String!, pin: String!): BookArgs!
 }
 
 type Subscription {
-  booking: BookingSubscriptionPayload!
+  booking(parkId: String!): BookingSubscriptionPayload!
+}
+
+type Item {
+  _id: ID!
+  booking: Boolean!
+  parkId: String!
 }
 
 enum MutationType {
@@ -22,6 +33,11 @@ type BookingSubscriptionPayload {
 }
 
 type BookArgs {
-  name: String!
-  carId: String!
+  name: String
+  carId: String
+  startedAt: String
+  minutes: String
+  toPay: String
+  parkId: String
+  pin: String
 }
