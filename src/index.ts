@@ -8,7 +8,7 @@ const pubsub = new PubSub()
 const context = { pubsub, Models }
 
 const options = {
-  port: 5000,
+  port: process.env.PORT || 5000,
 }
 
 const server = new GraphQLServer({ schema, context })
