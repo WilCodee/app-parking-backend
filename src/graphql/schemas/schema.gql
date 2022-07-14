@@ -1,3 +1,43 @@
 type Query {
-  hello: String!
+  item(parkId: String!): Item!
+}
+
+type Mutation {
+  booking(
+    name: String!
+    carId: String!
+    parkId: String!
+    pin: String!
+  ): Boolean!
+  unBook(carId: String!, parkId: String!, pin: String!): BookArgs!
+}
+
+type Subscription {
+  booking(parkId: String!): BookingSubscriptionPayload!
+}
+
+type Item {
+  _id: ID!
+  booking: Boolean!
+  parkId: String!
+}
+
+enum MutationType {
+  booked
+  unbooked
+}
+
+type BookingSubscriptionPayload {
+  mutation: MutationType!
+  data: BookArgs
+}
+
+type BookArgs {
+  name: String
+  carId: String
+  startedAt: String
+  minutes: String
+  toPay: String
+  parkId: String
+  pin: String
 }

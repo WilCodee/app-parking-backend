@@ -4,13 +4,16 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.ts --exec ts-node src/index.ts -e gql,ts"
+    "dev": "nodemon src/index.ts --exec ts-node src/index.ts -e gql,ts",
+    "build": "tsc -p . && ncp src/graphql/schemas dist/graphql/schemas",
+    "start": "node dist/index.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/express-graphql": "^0.9.0",
     "@types/node": "^16.11.1",
+    "@types/ws": "^8.2.0",
     "nodemon": "^2.0.14",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4"
@@ -21,7 +24,11 @@
     "graphql-import-node": "^0.0.4",
     "graphql-tools": "^8.2.0",
     "graphql-yoga": "^1.18.3",
+<<<<<<< HEAD
     "mongoose": "^6.4.4",
+=======
+    "mongoose": "^6.0.12",
+>>>>>>> c975c33599f5a2501efc291959b7a09ee4a169de
     "ncp": "^2.0.0"
   }
 }
