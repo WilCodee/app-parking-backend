@@ -24,7 +24,11 @@
     "graphql-import-node": "^0.0.4",
     "graphql-tools": "^8.2.0",
     "graphql-yoga": "^1.18.3",
+<<<<<<< HEAD
+    "mongoose": "^6.4.4",
+=======
     "mongoose": "^6.0.12",
+>>>>>>> c975c33599f5a2501efc291959b7a09ee4a169de
     "ncp": "^2.0.0"
   }
 }
